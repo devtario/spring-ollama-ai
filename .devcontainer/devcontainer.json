@@ -1,0 +1,33 @@
+{
+	"name": "Debian",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "21",
+			"jdkDistro": "tem",
+			"mavenVersion": "3.9.10",
+			"installMaven": true
+		}
+	},
+	"forwardPorts": [
+		11434,
+		5432
+	],
+	"postCreateCommand": "ollama serve & sleep 2 && ollama pull gemma3:latest",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"ms-ossdata.vscode-pgsql",
+				"vscjava.vscode-spring-boot-dashboard",
+				"vscjava.vscode-spring-initializr",
+				"vmware.vscode-spring-boot"
+			]
+		}
+	},
+	"securityOpt": [
+		"no-new-privileges:true"
+	]
+}
