@@ -1,2 +1,8 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+*.html linguist-documentation=true
+docs/* linguist-documentation=true
+public/* linguist-documentation=true
+static/* linguist-documentation=true
+*.js linguist-generated=true
+*.css linguist-generated=true
